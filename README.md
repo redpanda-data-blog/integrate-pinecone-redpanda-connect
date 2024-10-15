@@ -24,6 +24,7 @@ This repository contains all the code you need to run the example from this arti
 
 1. Set up a Redpanda Connect cluster and create a topic.
 2. `cp .env.example .env` and fill out the `.env` file with all of the configuration variables from Redpanda and Pinecone.
+3. Use the provided `connect.yaml` to set up your pipeline from within the Redpanda dashboard.
 
 ## Usage
 
