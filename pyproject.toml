@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "comment-classifier"
+version = "0.1.0"
+description = "A toolkit to test the integration between Redpanda and Pinecone"
+authors = ["Keanan Koppenhaver <k.koppenhaver@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pinecone-client = {extras = ["grpc"], version = "^2.2.1"}
+sentence-transformers = "^2.2.2"
+kafka-python = "^2.0.2"
+python-dotenv = "^1.0.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,21 @@
+input:
+  kafka_franz:
+    seed_brokers:
+      - <your_kafka_url>
+    sasl:
+      - mechanism: SCRAM-SHA-256
+        password: <your_password>
+        username: <your_username>
+    topics: ["content-ingestor"]
+    consumer_group: ""
+    tls:
+      enabled: true
+
+output:
+  pinecone:
+    host: <your_pinecone_url>
+    api_key: <your_pinecone_api_key>
+    id: '${! timestamp_unix() }'
+    vector_mapping: this.embeddings
+    metadata_mapping: |
+      root.is_harmful = this.is_harmful
