@@ -35,7 +35,7 @@ def on_success(metadata):
 def on_error(e):
     print(f"Error sending message: {e}")
 
-# Sample dataset of comments with their IDs and harmfulness labels
+# Sample data set of comments with their IDs and harmfulness labels
 comments_with_labels = [
     (1, "This is a friendly comment", False),
     (2, "You're an idiot", True),
@@ -79,7 +79,7 @@ comments_with_labels = [
     (40, "Your stupidity is beyond belief", True)
 ]
 
-# Process each comment in the dataset
+# Process each comment in the data set
 for i, (id, comment, is_harmful) in enumerate(comments_with_labels):
     # Initialize the SentenceTransformer model (only once)
     if 'model' not in locals():
@@ -95,7 +95,7 @@ for i, (id, comment, is_harmful) in enumerate(comments_with_labels):
         "is_harmful": is_harmful
     })
 
-    # Send the message to Kafka topic
+    # Send the message to the Kafka topic
     future = producer.send(
         "content-ingestor",
         key=hostname,
